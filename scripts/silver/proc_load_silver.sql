@@ -32,7 +32,7 @@ BEGIN
         PRINT '--------------------------------------------------';
 
 
-        ----NEW TABLE
+        ----New Table
         SET @start_time = GETDATE()
         PRINT '>> Truncating Table: silver.crm_cust_info';
         TRUNCATE TABLE silver.crm_cust_info;
@@ -76,7 +76,7 @@ BEGIN
         PRINT '';
 
 
-        ----NEW TABLE
+        ----New Table
         SET @start_time = GETDATE()
         PRINT '>> Truncating Table: silver.crm_prd_info';
         TRUNCATE TABLE silver.crm_prd_info;
@@ -116,7 +116,7 @@ BEGIN
         PRINT '';
 
 
-        ----NEW TABLE
+        ----New Table
         SET @start_time = GETDATE()
         PRINT '>> Truncating Table: silver.crm_sales_details';
         TRUNCATE TABLE silver.crm_sales_details;
@@ -163,13 +163,13 @@ BEGIN
         PRINT '';
 
 
-        ----PRINT
+        ----Print
         PRINT '--------------------------------------------------';
         PRINT 'Loading CRM Tables';
         PRINT '--------------------------------------------------';
 
 
-        ----NEW TABLE
+        ----New Table
         SET @start_time = GETDATE()
         PRINT '>> Truncating Table: silver.erp_cust_az12';
         TRUNCATE TABLE silver.erp_cust_az12;
@@ -199,7 +199,7 @@ BEGIN
         PRINT '';
 
 
-        ----NEW TABLE
+        ----New Table
         SET @start_time = GETDATE()
         PRINT '>> Truncating Table: silver.erp_loc_a101';
         TRUNCATE TABLE silver.erp_loc_a101;
@@ -224,7 +224,7 @@ BEGIN
         PRINT '';
 
 
-        ----NEW TABLE
+        ----New Table
         SET @start_time = GETDATE()
         PRINT '>> Truncating Table: silver.erp_px_cat_g1v2';
         TRUNCATE TABLE silver.erp_px_cat_g1v2;
@@ -248,7 +248,8 @@ BEGIN
         PRINT '>> Load Duration for silver.erp_px_cat_g1v2: ' + CAST(DATEDIFF(SECOND, @start_time, @end_time) AS NVARCHAR) + ' seconds';
         PRINT '';
 
-    ----PRINT BATCH LOAD TIME
+
+    ----Print Batch Load Time
         SET @end_batch_time = GETDATE()
         PRINT '==================================================';
         PRINT 'Loading Silver Later is Completed:';
@@ -256,7 +257,7 @@ BEGIN
         PRINT '==================================================';
     END TRY
 
-    ----PRINT ERROR
+    ----Print Error
     BEGIN CATCH
         PRINT '==================================================';
         PRINT 'ERROR OCCURED DURING LOADING BRONZE LAYER';
