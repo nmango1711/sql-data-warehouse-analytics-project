@@ -32,7 +32,7 @@ SELECT cst_marital_status FROM bronze.crm_cust_info WHERE cst_marital_status != 
 SELECT DISTINCT cst_gndr FROM bronze.crm_cust_info;
 SELECT DISTINCT cst_marital_status FROM bronze.crm_cust_info;
 
---??? Checking silver.crm_cust_info
+-->>> Checking silver.crm_cust_info
 SELECT cst_id, COUNT(*) FROM SILVER.crm_cust_info GROUP BY cst_id HAVING COUNT(*) > 1 OR cst_id IS NULL;
 
 SELECT cst_firstname FROM silver.crm_cust_info WHERE cst_firstname != TRIM(cst_firstname);
@@ -77,7 +77,7 @@ SELECT
     RANK() over (PARTITION BY prd_key ORDER BY prd_start_dt) AS RANK
 FROM bronze.crm_prd_info;
 
---??? Checking silver.crm_prd_info
+-->>> Checking silver.crm_prd_info
 SELECT prd_id, COUNT(*) FROM silver.crm_prd_info GROUP BY prd_id HAVING COUNT(*) > 1 OR prd_id IS NULL;
 SELECT prd_nm FROM silver.crm_prd_info WHERE prd_nm != TRIM(prd_nm);
 SELECT prd_cost FROM silver.crm_prd_info WHERE prd_cost < 0 OR prd_cost IS NULL;
@@ -131,7 +131,7 @@ OR sls_sales IS NULL OR sls_quantity IS NULL OR sls_price IS NULL
 OR sls_sales <= 0 OR sls_quantity <= 0 OR sls_price <= 0
 ORDER BY sls_sales, sls_quantity, sls_price;
 
---??? Checking silver.crm_sales_details
+-->>> Checking silver.crm_sales_details
 SELECT * FROM silver.crm_sales_details;
 SELECT * FROM silver.crm_sales_details WHERE sls_ord_num != TRIM(sls_ord_num);
 SELECT * FROM silver.crm_sales_details WHERE sls_prd_key NOT IN (SELECT prd_key FROM silver.crm_prd_info);
@@ -174,10 +174,9 @@ SELECT DISTINCT
     END AS cleaned_gen
 FROM bronze.erp_cust_az12;
 
---??? Checking silver.erp_cust_az12
+-->>> Checking silver.erp_cust_az12
 SELECT DISTINCT bdate FROM silver.erp_cust_az12 WHERE BDATE < '1924-01-01' OR bdate > GETDATE() ORDER BY bdate DESC;
 SELECT DISTINCT gen, LEN(gen) FROM silver.erp_cust_az12;
-
 
 -- ====================================================================
 -- bronze.erp_cust_az12
@@ -197,7 +196,7 @@ SELECT DISTINCT
     END AS cntry
 FROM bronze.erp_loc_a101;
 
---??? Checking silver.erp_cust_az12
+-->>> Checking silver.erp_cust_az12
 SELECT DISTINCT cntry FROM silver.erp_loc_a101;
 
 -- ====================================================================
@@ -220,7 +219,7 @@ SELECT DISTINCT
     ASCII(RIGHT(maintenance, 1)) AS last_char
 FROM bronze.erp_px_cat_g1v2;
 
---??? Checking silver.erp_px_cat_g1v2
+-->>> Checking silver.erp_px_cat_g1v2
 SELECT DISTINCT cat FROM silver.erp_px_cat_g1v2;
 SELECT DISTINCT subcat FROM silver.erp_px_cat_g1v2;
 SELECT DISTINCT maintenance FROM silver.erp_px_cat_g1v2;
