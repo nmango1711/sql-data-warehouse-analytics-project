@@ -82,6 +82,7 @@ data-warehouse-project/
 │   ├── data_integration.png            # Draw.io file shows relations between data in layers
 │   ├── data_flow.png                   # Draw.io file for the data flow diagram
 │   ├── data_model.png                  # Draw.io file for data models (star schema)
+│   ├── data_catalog.md                 # Catalog of datasets, including field descriptions and metadata
 │   ├── naming_conventions.md           # Consistent naming guidelines for tables, columns, and files
 │
 ├── scripts/                            # SQL scripts for ETL and transformations
