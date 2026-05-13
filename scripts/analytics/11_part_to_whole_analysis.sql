@@ -17,8 +17,8 @@ WITH category_sales AS (
     SELECT
         p.category,
         SUM(f.sales_amount) AS total_sales
-    FROM gold.fact_sales f
-    LEFT JOIN gold.dim_products p
+    FROM gold.fact_sales AS f
+    LEFT JOIN gold.dim_products AS p
         ON p.product_key = f.product_key
     GROUP BY p.category
 )
