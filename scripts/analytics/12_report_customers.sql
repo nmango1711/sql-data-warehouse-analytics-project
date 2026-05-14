@@ -64,6 +64,9 @@ SELECT
     DATEDIFF(MONTH, MIN(order_date), MAX(order_date)) AS months_diff
 FROM base_query GROUP BY customer_key, customer_number, customer_name, age
 )
+/*---------------------------------------------------------------------------
+  3) Final Query: Combines all product results into one output
+---------------------------------------------------------------------------*/
 SELECT
     customer_key,
     customer_number,
