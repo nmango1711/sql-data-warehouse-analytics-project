@@ -78,6 +78,7 @@ data-warehouse-project/
 ├── datasets/                           # Raw datasets used for the project (ERP and CRM data)
 │
 ├── docs/                               # Project documentation and architecture details
+│   ├── analytics_roadmap.png           # Draw.io file of the analytics goals, metrics, and reporting insights
 │   ├── data_architecture.png           # Draw.io file shows the project's architecture
 │   ├── data_integration.png            # Draw.io file shows relations between data in layers
 │   ├── data_flow.png                   # Draw.io file for the data flow diagram
@@ -89,6 +90,7 @@ data-warehouse-project/
 │   ├── bronze/                         # Scripts for extracting and loading raw data
 │   ├── silver/                         # Scripts for cleaning and transforming data
 │   ├── gold/                           # Scripts for creating analytical models
+│   ├── analytics/                      # Scripts for analytics and reporting
 │
 ├── tests/                              # Test scripts and quality files
 │
