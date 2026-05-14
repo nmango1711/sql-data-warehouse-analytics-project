@@ -98,4 +98,4 @@ data-warehouse-project/
 
 ## 🌟 About Me
 
-Hi there! I'm **Stefan Janicijevic**. I’m an Data Engineer and passionate programmer who loves to make new projects, trying out new things and working with the cutting-edge technologies!
+Hi, I’m **Stefan Janicijevic** — a Data Engineer and passionate software developer with a strong interest in building projects, exploring new technologies, and continuously improving my skills. I enjoy working with modern tools and data-driven systems, with a focus on creating practical and scalable solutions!
